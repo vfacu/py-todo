@@ -1,6 +1,6 @@
 import os
 
-from termcolor import cprint
+from termcolor import colored
 
 
 def clear_console():
@@ -14,9 +14,9 @@ def clear_console():
 
 def display_menu():
     # ? clear_console()
-    cprint('\n--- TODO List Menu ---', 'red')
-    print('1. Add TODO')
-    print('2. View TODOs')
-    print('3. Update TODO')
-    print('4. Delete TODO')
-    print('0. Exit')
+    print(colored('\n--- TODO List Menu ---', 'blue', attrs=['bold', 'underline',]))
+    print(colored('1. Add TODO', 'light_blue', attrs=[]))
+    print(colored('2. View TODOs', 'light_blue', attrs=[]))
+    print(colored('3. Update TODO', 'light_blue', attrs=[]))
+    print(colored('4. Delete TODO', 'light_blue', attrs=[]))
+    print(colored('0. Exit', 'light_red', attrs=[]))
