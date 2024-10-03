@@ -3,7 +3,7 @@ import os
 from termcolor import colored
 
 
-def clear_console():
+def clear():
     # Para Windows
     if os.name == 'nt':
         os.system('cls')

@@ -1,10 +1,10 @@
 from termcolor import colored
 
-from utils import clear_console
+import helpers.console_helpers as console
 
 
 def add_todo(todos):
-    clear_console()
+    console.clear()
     name = input('Enter TODO name: ')
     description = input('Enter TODO description: ')
     todo = {
@@ -17,7 +17,7 @@ def add_todo(todos):
 
 
 def view_todos(todos):
-    clear_console()
+    console.clear()
     if not todos:
         print(colored('No TODOs available.', 'yellow'))
         return

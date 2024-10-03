@@ -1,14 +1,15 @@
 from termcolor import colored
 
-from utils import clear_console, display_menu
-from todos import add_todo, view_todos, update_todo, delete_todo
+import helpers.console_helpers as console
+# from core.todos import add_todo, view_todos, update_todo, delete_todo  # Recomendado, lo comento para el ejemplo
+from core import *  # No recomendado, ejemplo en el control de export/import
 
 
 def main():
     todos = []
-    clear_console()
+    console.clear()
     while True:
-        display_menu()
+        console.display_menu()
         choice = input(colored('Choose an option (0-4): ', 'yellow'))
 
         if choice == '1':
