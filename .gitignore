@@ -3,4 +3,5 @@ __pycache__/*
 
 # Virtual envs
 venv/*
+env/*
 .python-version
