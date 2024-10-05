@@ -3,10 +3,12 @@ from termcolor import colored
 import helpers.console_helpers as console
 # from core.todos import add_todo, view_todos, update_todo, delete_todo  # Recomendado, lo comento para el ejemplo
 from core import *  # No recomendado, ejemplo en el control de export/import
+from config import constants
+from helpers.file_helpers import read_json_file
 
 
 def main():
-    todos = []
+    todos = read_json_file(constants.TODOS_PATH)
     console.clear()
     while True:
         console.display_menu()
