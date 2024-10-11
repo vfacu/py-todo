@@ -4,9 +4,16 @@ from typing import List
 from helpers.file_helpers import write_json_file, read_json_file
 
 
-class Base(ABC):
-    all: List['Base'] = []
+class TodoBase(ABC):
+    all: List['TodoBase'] = []
     filename: str = None
+
+    def __init__(self, done):
+        self.done = done
+
+    @abstractmethod
+    def __str__(self):
+        pass
 
     @abstractmethod
     def parse_to_dict(self) -> dict:
@@ -24,7 +31,7 @@ class Base(ABC):
 
     @classmethod
     @abstractmethod
-    def parse_from_dict(cls, item:dict) -> 'Base':
+    def parse_from_dict(cls, item:dict) -> 'TodoBase':
         pass
 
     @classmethod

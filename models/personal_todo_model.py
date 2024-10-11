@@ -1,19 +1,24 @@
 from config import constants
 
-from .base_model import Base
+from .todo_base_model import TodoBase
 
 
-class Todo(Base):
+class PersonalTodo(TodoBase):
     filename = constants.TODOS_PATH
 
     def __init__(self, name, description, done=False) -> None:
+        super().__init__(done)
         self.__name = name
         self.description = description
-        self.done = done
+        
 
     @property
     def name(self):
         return self.__name.title()
+    
+    def __str__(self):
+        description = '' if not self.description else f': {self.description}'
+        return f'{self.name}{description}'
 
     @name.setter
     def name(self, new_name):
@@ -37,6 +42,6 @@ class Todo(Base):
         }
 
     @classmethod
-    def parse_from_dict(cls, item: dict) -> 'Todo':
+    def parse_from_dict(cls, item: dict) -> 'PersonalTodo':
         # return cls(name=item['name'], description=item['description'], done=item['done'])
         return cls(**item)
