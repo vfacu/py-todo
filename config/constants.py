@@ -1,1 +1,2 @@
-TODOS_PATH = 'todos.json'
+PERSONAL_TODOS_PATH = 'todos.json'
+WORK_TODOS_PATH = 'work-todos.json'

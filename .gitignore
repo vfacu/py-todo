@@ -7,4 +7,4 @@ env/*
 .python-version
 
 # Data
-todos.json
+*.json

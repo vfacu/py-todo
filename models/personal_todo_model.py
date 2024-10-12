@@ -1,24 +1,22 @@
 from config import constants
-
 from .todo_base_model import TodoBase
 
 
 class PersonalTodo(TodoBase):
-    filename = constants.TODOS_PATH
+    _filename = constants.PERSONAL_TODOS_PATH
 
-    def __init__(self, name, description, done=False) -> None:
+    def __init__(self, name, description='', done=False) -> None:
         super().__init__(done)
         self.__name = name
         self.description = description
-        
 
-    @property
-    def name(self):
-        return self.__name.title()
-    
     def __str__(self):
         description = '' if not self.description else f': {self.description}'
         return f'{self.name}{description}'
+    
+    @property
+    def name(self):
+        return self.__name.title()
 
     @name.setter
     def name(self, new_name):
